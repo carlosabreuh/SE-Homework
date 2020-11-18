@@ -1,0 +1,28 @@
+.slide1 {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  transition: width 1s ease-in-out 0s;
+  border: dashed white;
+  text-align: center;
+  border-radius: 120px 100px 10px;
+}
+
+.slide1:hover {
+  width: 500px;
+}
+
+.slide2 {
+  height: 100px;
+  width: 100px;
+  background-color: #577590;
+  transition: width 2s ease-in-out 0s;
+  border-style: dashed;
+  text-align: center;
+  border: dashed red;
+  border-radius: 10px 100px 120px;
+}
+
+.slide2:hover {
+  width: 700px;
+}
