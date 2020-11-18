@@ -16,7 +16,7 @@
   height: 100px;
   width: 100px;
   background-color: #577590;
-  transition: width 1s ease-in-out 0s;
+  transition: width 2s ease-in-out 0s;
   border-style: dashed;
   text-align: center;
   border: dashed red;
