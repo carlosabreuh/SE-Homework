@@ -13,8 +13,8 @@ console.log("While Loop=========================");
 
 //While Loop
 
-var i = 10;
-while(i>=1){
+var i = 1;
+while(i<=10){
     console.log(i);
     i--;
 }
@@ -34,10 +34,10 @@ do {
 
 // // foreach Loop
 
-// var sub = [0,1,2,3,4,5,6,7,8];
-// for(i in sub){
-// console.log([i]);
-// if(sub[i]==5)
-// break;
-// }
+var sub = [0,1,2,3,4,5,6,7,8];
+for(i in sub){
+console.log([i]);
+if(sub[i]==5)
+break;
+}
 
