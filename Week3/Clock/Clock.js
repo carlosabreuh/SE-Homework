@@ -1,49 +1,115 @@
-window.addEventListener('DOMContentLoaded', documentLoaded);
+// when the document is loaded, trigger the "documentLoaded" function
+window.addEventListener('DOMContentLoaded', documentLoaded, false);
+
+var startTime;
+var limite;
+var temporizador;
 
 function documentLoaded() {
-    document.getElementsByClassName("editable-in-place")[0].addEventListener("click", clicked);;
+  "use strict";
+
+  //// listen for mouse clicks on the button
+  // document.getElementById("btnStart").addEventListener("click", botaoClicked, false);
+  document.getElementsByClassName("editable")[0].addEventListener("click", clicked);
+  
+  console.log("Documento loaded");
 }
 
-function clicked(evt) {
-    // get the <input> and check if it is hidden
-    var input = this.querySelector("input");
-    var label = this.querySelector("div");
+function clicked(e){
+  // here this refers to the block of html that the lister is targeting
+  let minInput = this.nextElementSibling.querySelector('.min'); //relies on html order
+  let secInput = this.nextElementSibling.querySelector('.sec');
+  let inputWrapper = this.nextElementSibling;
+  let label = this.querySelector("#clock span");
+  
+  // clicked on the label want to edit
+  if (e.target === label){
+    label.classList.add('hidden');
+    inputWrapper.classList.remove('hidden');
+    
+    [minInput.value,secInput.value] = label.innerHTML.split(':');
+    minInput.focus();
+    // finish editing when enter is pressed
+    
+    minInput.addEventListener('keydown', function nextField(e2){
+      // 13 is the code for ENTER
+			if (e2.keyCode === 13) {
+        secInput.focus();
+				minInput.removeEventListener("keydown", nextField);
+      }
+    });
+    
+    secInput.addEventListener('keydown', function finishEntering(e3){
+      // 13 is the code for ENTER
+			if (e3.keyCode === 13) {
+				label.innerHTML = minInput.value +':'+ secInput.value;
+				label.classList.remove("hidden");
+				inputWrapper.classList.add("hidden");
+        
+        startClock(label.innerHTML);
+				
+				// its important to remove the keydown listener, 
+        //otherwise in a subsequent edit we will end up with several 
+        //keydown listeners running
+        //wait why refer to keypressed here? all functions globally scoped??
+				secInput.removeEventListener("keydown", finishEntering);
+      }
+    });
+    
+  } else if (e.target === inputWrapper){
+    // do nothing, clicking around the edit box
+  } else { // clicked somewhere random in the div so editing is over
+    //Future dev: change value of label anyway?
+    label.classList.remove('hidden');
+    inputWrapper.classList.add('hidden');
+  }
+  
+}
 
-    if (evt.target === input) {
-        // if user clicked on <input> do nothing, he is editing
+// when we click on the button, we save the current time, and the time limit. We then
+// create a timer to execute the "updateTime" function once a second.
+function startClock(userLimit) {
+  "use strict";
+  startTime = new Date();
+  
+  let [min,sec] = userLimit.split(':');
+  limite = parseInt(min)*60 + parseInt(sec);
 
-    } else if (evt.target === label) {
-        // <input> was hidden, make it visible
-        input.classList.remove("hide");
+  clearInterval(temporizador);
+  temporizador = setInterval(updateTime, 1000);
+}
 
-        // and hide the label
-        label.classList.add("hide");
+function updateTime() {
+  "use strict";
 
-        // fill the <input> with the text from the label
-        input.value = label.innerHTML;
+  // read the current time
+  var currentTime = new Date();
 
-        // adicionar o listener para detectar o fim da edicao com "ENTER"
-        input.addEventListener("keydown", function keydown(evt) {
+  // calculate how many seconds passed since the start of the timer
+  var elapsed = (currentTime.getTime() - startTime.getTime()) / 1000;
 
-            // 13 is the code for ENTER
-            if (evt.keyCode === 13) {
-                label.innerHTML = input.value;
-                label.classList.remove("hide");
-                input.classList.add("hide");
+  // convert seconds to minutes and seconds (below 60)
+  var minutos = Math.floor(elapsed / 60);
+  var segundos = Math.floor(elapsed % 60);
 
-                // its important to remove the keydown listener, otherwise in a subsequent edit
-                // we will end up with several keydown listeners running
-                input.removeEventListener("keydown", keydown);
-            }
+  // pad with zeroes on the left to look better
+  if (minutos < 10) {
+    minutos = "0" + minutos;
+  }
+  if (segundos < 10) {
+    segundos = "0" + segundos;
+  }
 
-        });
-        input.focus();
-    } else {
-        // <input> was visible, hide it without modifying the value
-        input.classList.add("hide");
+  // show the elapsed time
+  document.querySelector('#clock span').innerHTML = minutos + ":" + segundos;
 
-        // show the label
-        label.classList.remove("hide");
-    }
+  // check if we are above the time limit and set the color of the timer accordingly
+  if (minutos*60 + segundos >= limite) {
+    document.getElementById("clock").classList.add("red");
+    document.getElementById("clock").classList.remove("blue");
+  } else {
+    document.getElementById("clock").classList.add("blue");
+    document.getElementById("clock").classList.remove("red");  
+  }
 
 }
