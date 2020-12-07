@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            Value1: <input id='a' type="text" name="" value="">
+            value2: <input id='b' type="text" name="" value="">
+            value3: <input id='c' type="text" name="" value="">
+            <button onclick="add()">add</button>
+            <button onclick="subtract()">subtract</button>
+            <button onclick="multiply()">multiply</button>
+            <button onclick="divide()">divide</button>
+            <button onclick="average()">average</button>
+
+            <!-- <input id='sum' type="text" name="" value="">
+            <input type="button" name="" value="sum" onclick="sum()"> -->
+
+            <!-- <input type="button" value="-" onclick="calculator.answer.value += '-'" />
+            <p id="sum1"></p> -->
+        </div> 
+    </body>
+
+    <script type="text/javascript">
+    
+    var a = 0;
+    var b = 0;
+    var c = 0;
+
+    function sum() {
+        var a = Number(document.getElementById('a').value);
+        var b = Number(document.getElementById('b').value);
+        var sum = a + b;
+        document.getElementById('sum').value = sum;
+        document.getElementById('sum1').innerHTML = sum;
+        //  alert(sum);
+        //console.log(a + ""+ b);    
+    }
+    
+    function subtract() {
+        var a = Number(document.getElementById('a').value);
+        var b = Number(document.getElementById('b').value);
+        var sum = a + b;
+        document.getElementById('sum').value = sum;
+        document.getElementById('sum1').innerHTML = sum;
+    }
+
+    function multiply() {
+        var a = Number(document.getElementById('a').value);
+        var b = Number(document.getElementById('b').value);
+        var sum = a + b;
+        document.getElementById('sum').value = sum;
+        document.getElementById('sum1').innerHTML = sum;
+    }
+
+    function divide() {
+        var a = Number(document.getElementById('a').value);
+        var b = Number(document.getElementById('b').value);
+        var sum = a + b;
+        document.getElementById('sum').value = sum;
+        document.getElementById('sum1').innerHTML = sum;
+    }
+
+    </script>
+</html>

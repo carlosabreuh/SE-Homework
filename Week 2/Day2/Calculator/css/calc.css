@@ -1,0 +1,8 @@
+.Calculator{
+	width: 300px ;
+	padding: 15px;
+  background-color: orange;
+	font-style: italic;
+  border-style: solid;
+	font-weight: 500px;
+}

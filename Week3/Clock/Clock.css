@@ -1,0 +1,23 @@
+.blue {
+  background-color: #0781d4;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.red {
+  background-color: red;
+  border-radius: 50%;
+  width: auto;
+  height: auto;
+}
+
+#clock {
+  font-size: 60px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 200px;
+}

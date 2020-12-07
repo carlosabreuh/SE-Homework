@@ -1,0 +1,30 @@
+body {
+  /* Backgound Image */
+  background: rgba(198, 195, 178, 0.988);
+  background-image: url("BIG.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+  font-family: sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+.Main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 33%);
+  height: 100%;
+  width: 100%;
+}
+
+/* Circle Property */
+.cell {
+  background: chartreuse;
+  border-radius: 50%;
+}
+
+.cell:hover {
+  opacity: 0.3;
+}

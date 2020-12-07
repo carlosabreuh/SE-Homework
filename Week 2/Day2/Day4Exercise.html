@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>POP!!</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+
+
+
+  <body>
+   <h1 onclick="changeText(this)"> Click on this text!</h1> 
+   <h2 onclick="changeText2(this)"> Now click on this one!</h2>
+   <h3 onclick="changeText3(this)"> OK, one last time </h3>
+
+   <button id="myText"> Now try this one</button>
+
+   <p id="AnyText"></p>
+
+    <script>
+    function changeText(id){
+        id.innerHTML = "Cool!"
+       
+    }
+    function changeText2(id){
+        id.innerHTML = "Hiyoooooo!!"
+    }
+    function changeText3(id) {
+        id.innerHTML = "Got you again!!"
+    }
+
+    // document.getElementById("myText").onclick = displayDate;
+
+    function displayDate() {
+        document.getElementById("AnyText").innerHTML = "Hello Again!";
+    }
+
+    </script>
+  </body>
+</html>

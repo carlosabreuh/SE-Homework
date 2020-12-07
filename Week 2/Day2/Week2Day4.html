@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+      <h3 id="1">
+            Header 1
+
+      </h3>
+        
+      <h3 id="2">
+            Header 2
+      </h3>
+
+      <h3 id="3">
+
+            Header 3
+      </h3>
+
+      <button onclick="changeDisplay()">Change</button>
+      <button onclick="resetDisplay()">Reset</button>
+        <script type="text/javascript">
+        function changeDisplay(){
+            document.getElementById('1').style.display = 'block';
+            document.getElementById('2').style.display = 'none';
+            document.getElementById('3').style.fontSize = '40px';
+        }
+
+        function resetDisplay(){
+           
+            document.getElementById('2').style.display = 'block';
+            document.getElementById('3').style.fontSize = '100%';
+        }
+        </script>
+    </body>
+</html>

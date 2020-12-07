@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.."
+		},
+		{
+			"path": "../../../../../../Class Day 4/calc/css"
+		},
+		{
+			"path": "../../../../../../Class Day 4/calc/js"
+		},
+		{
+			"path": "../../../../../../Class Day 4/calc/img"
+		},
+		{
+			"path": "../../../../../../Class Day 4/calc/vid"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Software Engineering"
+	}
+}
