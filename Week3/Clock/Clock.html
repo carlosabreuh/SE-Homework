@@ -6,13 +6,17 @@
     <link rel="stylesheet" type="text/css" href="Clock.css"/>
   </head>
   <body>
-      
-    <div id="controls">
-        <input id="txtTempo" type="text" value="10" size="4" maxlength="4"><button id="btnStart">Start</button>
+    <div class="timer-container">
+      <div id="clock" class="blue editable"><span>00:00</span></div>
+      <div id="inputs-wrapper" class="hidden">  
+        <input type="text" class="time-input min" maxlength="2">
+        <input type="text" class="time-input sec" maxlength="2">
       </div>
-      <div class="editable-in-place" ><div class="inside"></div> <div id="clock" class="blue">00:00</div>
-      
+    
+    </div>
+    
    
     <script src="Clock.js"></script>
   </body>
 </html>
+
