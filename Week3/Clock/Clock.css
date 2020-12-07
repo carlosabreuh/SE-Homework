@@ -1,23 +1,42 @@
 .blue {
   background-color: #0781d4;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  position: relative;
 }
 
 .red {
   background-color: red;
-  border-radius: 50%;
-  width: auto;
-  height: auto;
 }
 
 #clock {
-  font-size: 60px;
-  width: 200px;
-  height: 200px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 200px;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0.15rem 0.15rem grey;
+  margin-top: 0.5rem;
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#inputs-wrapper {
+  margin-top: -4.75rem; /*8/2 + 1.5/2*/
+}
+.time-input {
+  height: 1.5rem;
+  width: 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.hidden {
+  visibility: hidden;
 }
