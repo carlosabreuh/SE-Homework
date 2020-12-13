@@ -28,11 +28,13 @@ class Fish {
     console.log("I can swim");
   }
 }
-class Nemo extends Fish {
+class Nemo extends Fish {  //child class of class 'fish'
   constructor(color) {
-    super();
+    super(); //used to access the object's parent i.e 'FIRST-Class' aka 'Fish', must go before 'this.' attribute.
     this.color = color;
   }
 }
-var Nemoo = new Nemo("purple");
+let Nemoo = new Nemo("purple"); //Object of child class nemo.
+Nemoo.name = 'Nemo'
+console.log(Nemoo.name);
 Nemoo.swim();
