@@ -34,7 +34,7 @@ class Nemo extends Fish {  //child class of class 'fish'
     this.color = color;
   }
 }
-let Nemoo = new Nemo("purple"); //Object of child class nemo.
-Nemoo.name = 'Nemo'
-console.log(Nemoo.name);
-Nemoo.swim();
+let nemo = new Nemo("purple"); //Object of child class nemo.
+nemo.name = 'Nemo'
+console.log(nemo.name);
+nemo.swim();
