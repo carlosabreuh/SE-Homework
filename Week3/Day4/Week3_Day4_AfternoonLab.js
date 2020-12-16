@@ -11,13 +11,27 @@ class Animal{//CLASS
         this.color = color;//must add another property to method chain
         this.legs = legs;
         this.superPower = superPower;
+
     }userSuperPower(){
+        console.log(this.superPower);
     }speaks(){
+        console.log("Woof!!!");
     }run(){
+        console.log("I love to run!!!");
     }
 }
 let dog = new Animal('Charlie', 16, 'red-brown' , 4, 'reads your mind');
+dog.userSuperPower();
+dog.speaks();
+dog.run();
+
 let puppy = new Animal('Darcy', 1, 'black and white', 4, 'makes you happy');
+puppy.userSuperPower();
+puppy.speaks();
+puppy.run();
+
+
+
 // Create a class name User
 // This class with have firstName, lastName, department attributes 
 // a method name changeDepartment()
