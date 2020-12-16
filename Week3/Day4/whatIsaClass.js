@@ -1,3 +1,5 @@
+
+
 let hotelCalifornia = {
   name: "Hotel California",
   location: "California",
