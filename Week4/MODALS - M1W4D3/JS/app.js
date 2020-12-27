@@ -15,11 +15,16 @@ const openModal = () => {
     $modal.css('display', 'block')
 }
 
-// Adding Event Listener
+const closeModal = () => {
+    $modal.css('display', 'none');
+}
+
+// Add event listener to About the Game button
 $openBtn.on('click', openModal);
 
+$closeBtn.on('click', closeModal);
 
-
+setTimeout(openModal, 5000);
 /* Exercise End */
 
 }); 
