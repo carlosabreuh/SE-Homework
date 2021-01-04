@@ -71,6 +71,3 @@ for (let i = 0; i < enemy.length; i++) {
   }
 };
 
-// if (hero.hull > 0) {
-//   console.log("You Won the Game!!!!");
-// }
