@@ -45,5 +45,16 @@ $(()=>{
     const team3 = new Team('team3', $('#team3')).setup();
     console.log(team1.$el); //confirm the element is working
 
+console.log("Here");
+})
 
+$(()=>{
+  const $tiles = $('.tile').on('click', (event)=>{
+      $(event.currentTarget).toggleClass('active')  
+
+      //step 1 get value that was clicked on
+      console.log($(event.currentTarget).text());
+
+      //step 2 change click handlers
+    })
 })
