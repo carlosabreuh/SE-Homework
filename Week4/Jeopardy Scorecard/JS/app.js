@@ -5,6 +5,7 @@ class Team {
         this.score = 0;
         //lets assign the element to each Team instance
         this.$el = $el;
+        
     }
     //what does the score board do?
     //it increases the score based on pointvalue
