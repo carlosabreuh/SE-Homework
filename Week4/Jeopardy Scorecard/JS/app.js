@@ -10,7 +10,7 @@ class Team {
     //what does the score board do?
     //it increases the score based on pointvalue
     increaseScore(pointValue){
-     // this.score = this.score + pointValue;
+     this.score = this.score + pointValue;
      this.score += pointValue;
      //this will now allow us to grab the 1st element and input the score as the text
      //what is eq? it stands for equals and selects children in arry
