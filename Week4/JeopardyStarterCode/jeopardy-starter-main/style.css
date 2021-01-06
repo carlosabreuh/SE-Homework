@@ -1,3 +1,7 @@
+body {
+background-color: black;
+}
+
 *,
 *:before,
 *:after {
@@ -7,8 +11,9 @@
 .board {
   position: absolute;
   top: 0px;
-  bottom: 0px;
+  bottom: 8rem;
   width: 100%;
+  z-index: -1;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
@@ -16,6 +21,28 @@
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
+  
+}
+
+.scorecard {
+
+border: black solid 3px;
+display: flex;
+justify-content: space-around;
+position: fixed;
+bottom: 1px;
+background-color: #0000ff;
+width: 100%;
+color: white;
+
+}
+
+.team {
+
+border: white solid;
+width: 33%;
+text-align: center;
+
 }
 .board .row {
   -webkit-box-flex: 1;
