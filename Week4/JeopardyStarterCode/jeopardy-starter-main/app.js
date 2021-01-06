@@ -6,6 +6,16 @@ $(()=>{
     
     const $tiles = $('.tile').on('click', (event)=>{
       $(event.currentTarget).toggleClass('active')  
+      //step 1 - - Change the value with the tile that's clicked on. 
+      console.log($(event.currentTarget).text().split(/\s+/)[1].slice(1));
+      const currentTileValue = Number($(event.currentTarget).text().split(/\s+/)[1].slice(1));
+      // -Number- > Treat it like a number
+      
+      //step 2 - - change the ckick handler
+      team1.increaseBy = currentTileValue;
+      team2.increaseBy = currentTileValue;
+      team3.increaseBy = currentTileValue;
+
     })
 })
 
@@ -16,6 +26,7 @@ class Team {
         this.score = 0;
         //lets assign the element to each Team instance
         this.$el = $el;
+        this.increaseBy = 100;
         
     }
     //what does the score board do?
@@ -37,11 +48,11 @@ class Team {
         //select your 2nd child because thats your btn
         this.$el.children().eq(1).on('click', () => {
             //the pt value should be imported from another class
-            this.increaseScore(100)
+            this.increaseScore(this.increaseBy)
 
         })
         this.$el.children().eq(2).on('click', () => {
-            this.decreaseScore(100)
+            this.decreaseScore(this.increaseBy)
             
         })
         //remember to call these methods when you instantiate the class
