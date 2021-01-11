@@ -2,7 +2,6 @@
 
 
 
-
 class App extends React.Component {
   render () {
     return(
@@ -29,26 +28,27 @@ class Sidebar extends React.Component {
 };
 
 class Reviews extends React.Component {
-  render () {
-      return(
-    <div id="reviews">
-        <div id="rev">
-            <h2>Reviews</h2>
-            <h3>1,281</h3>
-        </div>
-        <div id="rev">
-            <h2>Average Rating</h2>
-            <h3>4.6</h3>
-        </div>
-        <div id="rev">
-            <h2>Sentiment Analysis</h2>
-            <h3>960</h3>
-            <h3>122</h3>
-            <h3>321</h3>        
-        </div>
-    </div>
-    )}
-};
+    render () {
+        return(
+      <div id="reviews">
+          <div id="rev">
+              <h2>Reviews</h2>
+              <h3>1,281</h3>
+          </div>
+          <div id="rev">
+              <h2>Average Rating</h2>
+              <h3>4.6</h3>
+              <img id='img1' src="rating.png"/>
+          </div>
+          <div id="rev">
+              <h2>Sentiment Analysis</h2>
+              <h3>960</h3>
+              <h3>122</h3>
+              <h3>321</h3>        
+          </div>
+      </div>
+      )}
+  };
 
 
 class Visitors extends React.Component {
