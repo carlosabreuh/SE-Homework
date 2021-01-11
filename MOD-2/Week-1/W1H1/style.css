@@ -1,0 +1,55 @@
+#container {
+    height: 90vh;
+    display: grid;
+    grid-template-areas:
+    "sidebar reviews"
+    "sidebar visitors"    ;
+    grid-template-columns: 25% 72%;
+    grid-template-rows: 35% auto;
+    grid-gap: 1.2% 1.2%;
+    border: solid rgb(80, 77, 77);
+    background-color: #212f45;
+    padding: 2% 2%;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    border: solid rgb(208, 199, 199);
+    text-align: center;
+    color: #e36414;
+    
+}
+
+#reviews {
+    grid-area: reviews;
+    display: grid;
+    border: solid rgb(237, 226, 226);
+    grid-gap: 1% 1%;
+    padding: 1% 1%;
+}
+
+#rev {
+    grid-row: 1/3;
+    width: 95%;
+    height: 95%;
+    border: solid rgb(222, 208, 208);
+    text-align: center;
+    color: #e36414;
+    
+}
+
+#visitors {
+    display: grid;
+    grid-area: visitors;
+    border: solid rgb(80, 77, 77);
+    grid-template-rows: 34% 64%;
+}
+#vis {
+    grid-column: 1/2;
+    color: #e36414;
+    text-align: center;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
