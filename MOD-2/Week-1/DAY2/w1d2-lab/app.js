@@ -1,59 +1,73 @@
-
-
 class App extends React.Component {
   state = {
     products: products,
-    name: '',
+    name: "",
     price: 0,
-    description: 'Describe this item',
+    description: "Describe this item",
+  };
+}
+
+// console.log(receipts);
+// console.log(receipts[0].order);
+class App extends React.Component {
+  state = {
+    // receipt1: receipt1,
+    // receipt2: receipt2,
+    // receipt3: receipt3
+    receipts,
+  };
+  render() {
+    //   this.state.receipts.forEach(element => {
+    //       console.log(element);
+    //   });
+    return (
+      <div>
+        <h1 className="truck-name">Korilla</h1>
+        <div>
+          {this.state.receipts.map((receipt) =>
+            !receipt.paid ? <Receipt receipt={receipt} /> : ""
+          )}
+          {/* {!this.state.receipt2.paid ? <Receipt receipt= {this.state.receipt2}/> : ""}
+                        {!this.state.receipt3.paid ? <Receipt receipt= {this.state.receipt3}/> : ""} */}
+          {/* <Receipt /> */}
+        </div>
+      </div>
+    );
   }
 }
-
-
-const receipt1 =
-  {
-    person: 'Karolin',
-    order: {
-      main: 'Burrito',
-      protein: 'Organic Tofu',
-      rice: 'Purple Rice',
-      sauce: 'Green Crack',
-      toppings: [
-        'Baby Bok Choy', 'Cucumber Kimchi'
-      ],
-      drink: 'Korchata',
-      cost: 22
-    },
-    paid: false
+class Receipt extends React.Component {
+  render() {
+    console.log(this.props);
+    return (
+      <div>
+        <h2>{this.props.receipt.person}</h2>
+        <ul>
+          <li>
+            <span>Main: </span>
+            {this.props.receipt.order.main}
+          </li>
+          <li>
+            <span>Protein: </span>
+            {this.props.receipt.order.protein}
+          </li>
+          <li>
+            <span>Rice: </span>
+            {this.props.receipt.order.rice}
+          </li>
+          <li>
+            <span>Sauce: </span>
+            {this.props.receipt.order.sauce}
+          </li>
+          <li>
+            <span>Drink: </span>
+            {this.props.receipt.order.drink}
+          </li>
+          <li>
+            <span>Cost: </span>
+            {this.props.receipt.order.cost}
+          </li>
+        </ul>
+      </div>
+    );
   }
-const receipt2 = {
-  person: 'Jerrica',
-  order: {
-    main: 'Rice Bowl',
-    protein: 'Ginger Soy Chix',
-    rice: 'Sticky Rice',
-    sauce: 'Korilla',
-    toppings: [
-      'Yuzu Pickled Sweet Pepper', 'Kale'
-    ],
-    drink: 'Korchata',
-    cost: 19
-  },
-  paid: false
 }
-const receipt3 = {
-  person: 'Matt',
-  order: {
-    main: 'Salad Bowl',
-    protein: 'Organic Tofu',
-    rice: 'none',
-    sauce: "K'lla",
-    toppings: [
-      'Blue Potato Salad', 'Pico De Gallo', 'Red Kimchi'
-    ],
-    drink: 'Sparkling Blood Orange Soda',
-    cost: 20
-  },
-  paid: true
-}
-
