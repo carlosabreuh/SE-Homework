@@ -14,13 +14,14 @@ class App extends React.Component {
     //   });
       const styles = {color:'rgb(180, 50, 201)'}
       return(
-          <div>
+          <div> 
               <h1 className="truck-name">Korilla</h1>
               <div>
                 {this.state.receipts.map( (receipt) => !receipt.paid ? <Receipt receipt= {receipt}/> : "")}
                         {/* {!this.state.receipt2.paid ? <Receipt receipt= {this.state.receipt2}/> : ""}
                         {!this.state.receipt3.paid ? <Receipt receipt= {this.state.receipt3}/> : ""} */}
                 {/* <Receipt /> */}
+               
               </div>
           </div>
       )
