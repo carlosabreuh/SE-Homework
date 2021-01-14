@@ -6,7 +6,12 @@ body {
   font-family: "Poppins", sans-serif;
   background: teal;
   text-align: center;
+  background-image: url("tardis.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  
 }
+
 
 div {
   margin: auto;
