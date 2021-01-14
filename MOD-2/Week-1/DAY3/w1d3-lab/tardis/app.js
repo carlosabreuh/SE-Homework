@@ -51,10 +51,10 @@ class DivThree extends React.Component {
         return(
         <div onClick={this.changeIt}>
             <div>
-             <h3>Futbol is Life!! "Davi Sanchez"</h3>
+             <h3>Welcome to </h3>
             </div>
              <div>
-             <h3>FUTBOL IS LIFE!! "DAVI SANCHEZ"</h3>
+             <h3>Tardis</h3>
             </div>
         </div>
         )
