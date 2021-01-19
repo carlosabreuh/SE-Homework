@@ -1,62 +1,129 @@
-import React, { useState, useEffect } from "react";
-import "./indexindex.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronRight,
-  faChevronLeft,
-  faCircle,
-  faCheckCircle,
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
+class App extends React.Component {
+  state = {
+    groceries: groceries,
+    item: "",
+    quantity: 0,
+    units: "",
+  }; 
+  handleChange = (event) => {
+    const re = /^[0-9\b]+$/;
+    if (event.target.value === "" || re.test(event.target.value)) {
+      this.setState({ [event.target.id]: event.target.value });
+    }
+  };
+  handleTextChange = (event) => {
+    const re = /[A-Za-z]/gi;
+    if (event.target.value === "" || re.test(event.target.value)) {
+      this.setState({ [event.target.id]: event.target.value });
+    }
+  };
 
-const App = () => {
-  // HINT: each "item" in our list names a name, a boolean to tell if its been completed, and a quantity
-  const [items, setItems] = useState([
-    { itemName: "item 1", brand: "item 1", quantity: 1, isPurchsed: false },
-    { itemName: "item 2", brand: "item 2", quantity: 2, isPurchsed: false },
-    { itemName: "item 3", brand: "item 3", quantity: 3, isPurchsed: false },
-  ]);
+  
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const newItem = {
+      item: this.state.item,
+      quantity: this.state.quantity,
+      units: this.state.units,
+      isPurchased: true,
+    };
+    this.setState({
+      groceries: [newItem, ...this.state.groceries],
+      item: "",
+      quantity: 0,
+      units: "",
+    });
+  };
 
-  return (
-    <div className="app-background">
-      <div className="main-container">
-        <div className="add-item-box">
-          <input className="add-item-input" placeholder="Add an item..." />
-          <FontAwesomeIcon icon={faPlus} />
+  render() {
+    const listStyles = { color: "orange" };
+    return (
+      <div className="groceriesApp">
+        <h1>Welcome to Online Shopping!!</h1>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="item">Item </label>
+          <input
+            type="text"
+            value={this.state.item}
+            onChange={this.handleTextChange}
+            id="item"
+            placeholder="Name of the item"
+          />
+          <br />
+          <br />
+          <label htmlFor="quantity">Quantity </label>
+          <input
+            type="number"
+            value={this.state.quantity}
+            onChange={this.handleChange}
+            id="quantity"
+          />
+          <br />
+          <br />
+          <label htmlFor="units">Units </label>
+          <input
+            type="units"
+            value={this.state.units}
+            onChange={this.handleTextChange}
+            id="units"
+            placeholder="Enter name of units"
+          />
+          <input type="submit" />
+          <br />
+        </form>
+
+        <div>
+          <h2>Preview our new item</h2>
+          <h3>
+            {this.state.item} {"  "} {this.state.quantity} {"  "}
+            {this.state.units}
+          </h3>
         </div>
-        <div className="item-list">
-          {items.map((item, index) => (
-            <div className="item-container">
-              <div className="item-name">
-                {/* HINT: replace false with a boolean indicating the item has been completed or not */}
-                {item.isPurchsed ? (
-                  <>
-                    <FontAwesomeIcon icon={faCheckCircle} />
-                    <span className="completed">{item.itemName}</span>
-                  </>
-                ) : (
-                  <>
-                    <FontAwesomeIcon icon={faCircle} />
-                    <span>Item 1</span>
-                  </>
-                )}
-              </div>
-              <div className="quantity">
-                <button>
-                  <FontAwesomeIcon icon={faChevronLeft} />
-                </button>
-                <span>{item.quantity}</span>
-                <button>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="total">Total: 6</div>
+
+        <ul>
+          {this.state.groceries.map((grocery) => {
+            return grocery.isPurchased ? (
+              <li>
+                <span style={listStyles}>Item: </span>
+                {grocery.item}
+                {"  "}
+                <span style={listStyles}>Qty: </span>
+                {grocery.quantity}
+                {"  "}
+                <span style={listStyles}>Units: </span>
+                {grocery.units}
+                {"  "}
+              </li>
+            ) : null;
+          })}
+        </ul>
       </div>
-    </div>
-  );
-};
+    );
+  }
+} //end of class App
 
-export default App;
+
+const groceries = [
+  {
+    item: "sugar",
+    brand: "Domino",
+    units: "Family Pack",
+    quantity: 3,
+    isPurchased: true,
+  },
+  {
+    item: "Milk",
+    brand: "Wesley Farms",
+    units: "one Gallon",
+    quantity: 1,
+    isPurchased: true,
+  },
+  {
+    item: "Eggs",
+    brand: "Eggland Best",
+    units: "one carton",
+    quantity: 1,
+    isPurchased: true,
+  },
+];
+ReactDOM.render(<App />, document.querySelector(".container"));
