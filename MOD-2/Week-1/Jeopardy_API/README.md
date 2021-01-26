@@ -1,8 +1,6 @@
 - Thank you for stopping by.  
 
-- In this small project, I used the 
-
-- fetch function to GET data from("http://jservice.io/api/random")
+- In this small project, I used the _fetch_ function to GET data from("http://jservice.io/api/random")
 
 - This resulted in random facts which made the game an interesting one for the user. 
 
